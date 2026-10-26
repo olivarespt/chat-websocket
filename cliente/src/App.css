@@ -1,0 +1,236 @@
+:root {
+  --bg-color: #f0f2f5;
+  --panel-bg: #ffffff;
+  --text-color: #333;
+  --burbuja-mia: #8a2be2; 
+  --burbuja-ajena: #e6e6fa; 
+  --texto-burbuja-mia: white;
+  --texto-burbuja-ajena: #333;
+  --borde: #ddd;
+}
+
+.dark {
+  --bg-color: #1a1a1a;
+  --panel-bg: #242526;
+  --text-color: #e4e6eb;
+  --burbuja-mia: #7c3aed; 
+  --burbuja-ajena: #2d2438; 
+  --texto-burbuja-mia: #ffffff;
+  --texto-burbuja-ajena: #e4e6eb;
+  --borde: #333;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.login-card {
+  background-color: var(--panel-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-card input {
+  padding: 10px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-card button {
+  padding: 10px;
+  background-color: var(--burbuja-mia);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--bg-color);
+  justify-content: center;
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  max-width: 1200px;
+  width: 100%;
+}
+
+header {
+  padding: 15px 20px;
+  background-color: var(--panel-bg);
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.conectados-mini {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lista-nombres {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px; 
+}
+
+.status-online { color: #2e8b57; font-size: 0.6rem; }
+.status-offline { color: #dc143c; font-size: 0.6rem; }
+
+.btn-theme { 
+  padding: 6px 12px; 
+  cursor: pointer; 
+  border-radius: 20px; 
+  border: 1px solid var(--borde); 
+  background: transparent; 
+  color: var(--text-color); 
+}
+
+.mensajes-lista {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mensaje-sistema {
+  align-self: center;
+  font-size: 0.85rem;
+  color: #888;
+  background-color: rgba(0,0,0,0.05);
+  padding: 5px 12px;
+  border-radius: 12px;
+}
+
+.mensaje-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 70%;
+}
+
+.mensaje-wrapper.mio {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.mensaje-wrapper.ajeno {
+  align-self: flex-start;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.contenido-mensaje {
+  display: flex;
+  flex-direction: column;
+}
+
+.mensaje-wrapper.mio .contenido-mensaje {
+  align-items: flex-end;
+}
+
+.emisor {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.burbuja {
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.mio .burbuja {
+  background-color: var(--burbuja-mia);
+  color: var(--texto-burbuja-mia);
+  border-bottom-right-radius: 4px;
+}
+
+.ajeno .burbuja {
+  background-color: var(--burbuja-ajena);
+  color: var(--texto-burbuja-ajena);
+  border-bottom-left-radius: 4px;
+}
+
+.hora {
+  font-size: 0.7rem;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.chat-input {
+  padding: 15px;
+  background-color: var(--panel-bg);
+  border-top: 1px solid var(--borde);
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  outline: none;
+}
+
+.chat-input button {
+  padding: 0 20px;
+  background-color: var(--burbuja-mia);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
